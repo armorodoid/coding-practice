@@ -1,5 +1,6 @@
 package com.example.coding_practice;
 
+import com.example.CodingQuestions.Four.FourSolution;
 import com.example.CodingQuestions.One.QuestionOne;
 import com.example.CodingQuestions.Three.ThreeQuestion;
 import com.example.CodingQuestions.Two.TwoQuestion;
@@ -21,9 +22,15 @@ public class QuestionsController {
         return twoQuestion.twoSum(array, target);
     }
 
-    @PostMapping("/one")
+    @PostMapping("/three")
     public int questionThree(@RequestBody int[] array) {
         ThreeQuestion threeQuestion = new ThreeQuestion();
         return threeQuestion.diffBetweenEvenAndOdd(array);
+    }
+
+    @PostMapping("/four")
+    public boolean questionThree(@RequestBody String s) {
+        FourSolution fourSolution = new FourSolution();
+        return fourSolution.isPalindrome(s);
     }
 }
