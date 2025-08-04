@@ -1,6 +1,7 @@
 package com.example.coding_practice;
 
 import com.example.CodingQuestions.One.QuestionOne;
+import com.example.CodingQuestions.Three.ThreeQuestion;
 import com.example.CodingQuestions.Two.TwoQuestion;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,5 +19,11 @@ public class QuestionsController {
     public boolean questionTwo(@RequestBody int[] array, @RequestParam int target) {
         TwoQuestion twoQuestion = new TwoQuestion();
         return twoQuestion.twoSum(array, target);
+    }
+
+    @PostMapping("/one")
+    public int questionThree(@RequestBody int[] array) {
+        ThreeQuestion threeQuestion = new ThreeQuestion();
+        return threeQuestion.diffBetweenEvenAndOdd(array);
     }
 }
